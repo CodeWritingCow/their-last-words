@@ -18,8 +18,6 @@ Each person's last words are stored in a JSON file inside `collection/`. Name th
 
 If the person has a middle name, then name the file like this: **`{lastname-firstname-middlename}.json:`**
 
-Some people are best known by names other than their given names. Let's use their popular names. For example, use `monroe-marilyn.json` instead of `mortenson-norma-jeane.json`; and `pope-john-paul-ii.json` rather than `wojtyła-karol-józef.json`.
-
 ### File Structure
 Use this structure for the JSON file.
 
@@ -36,8 +34,7 @@ Use this structure for the JSON file.
 }
 ```
 If the person's last words were in English, **`translation`** can be omitted from the file.
-Edge case: Marilyn Monroe's birth name was Norma Jeane Mortenson, but everybody knew her by her stage name. Let's use "Marilyn Monroe" inside the JSON file.
-Another edge case: Most people know Pope John Paul II. Few know Karol Józef Wojtyła. For now, let's use Pope John Paul II in `lastName` and omit `firstName`.
+
 Note: Please remove comments from your JSON files. JSON doesn't allow comments. The comments in the template above are for illustrative purposes only.
 
 ## Example 
@@ -55,3 +52,10 @@ Note: Please remove comments from your JSON files. JSON doesn't allow comments. 
 	"note": "Spoken on his deathbed to his sister-in-law"
 }
 ```
+
+## Edge Cases
+Some people are known not by their given names, but by their stage names, nicknames, etc. Let's use their popular names.
+
+One example: Everyone knows Norma Jeane Mortenson as Marilyn Monroe. So, her JSON file should be `monroe-marilyn.json` and not `mortenson-norma-jeane.json`. Inside the file, we should have `"Marilyn"` as `"firstName"` and `"Monroe"` as `"lastName"`.
+
+Another example: Most people know Pope John Paul II. Few know Karol Józef Wojtyła. So, his JSON file should be `pope-john-paul-ii.json` and not `wojtyła-karol-józef.json`. Inside the file, let's use `Pope John Paul II` as `lastName` and omit `firstName`for now.
