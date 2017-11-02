@@ -1,0 +1,12 @@
+```js
+{
+	"lastName": "Antoinette",
+	"firstName": "Marie",
+	"lastWords": "Pardonnez-moi, monsieur.",
+	"translation": "Excuse Me, Sir", // If last words are in a non-English language, include English translation
+	"biography": "Last Queen of France before the French Revolution",
+	"born": "1755-11-02",
+	"died": "1793-10-16",
+	"note": "Died at the Guillotine"
+}
+```
