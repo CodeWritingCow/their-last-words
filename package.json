@@ -26,7 +26,6 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat-json": "^1.0.0",
-    "gulp-merge-json": "^1.2.0",
     "mocha": "^4.0.1"
   }
 }
