@@ -1,12 +1,12 @@
-var express 	= require("express"),
-	app 		= express(),
-	bodyParser 	= require("body-parser"),
-	logger		= require("morgan");
+const express 		= require("express");
+const app 			= express();
+const bodyParser 	= require("body-parser");
+const logger		= require("morgan");
 
-var sentiment 	= require("sentiment");
+const sentiment 	= require("sentiment");
 
 // Loads collection of last words
-var lastWords 	= require("./lastWords");
+const lastWords 	= require("./lastWords");
 
 var port = process.env.PORT || 8080;
 
@@ -14,13 +14,13 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 
 // HOME ROUTE
-app.get("/", function(req, res) {
+app.get("/", (req, res) => {
 	res.send(lastWords);
 });
 
 // GET QUOTE BY PERSON'S LAST NAME
-app.get("/lastname/:lastname", function(req, res) {
-	res.send(lastWords.filter(function(person) {
+app.get("/lastname/:lastname", (req, res) => {
+	res.send(lastWords.filter((person) => {
 		return person.lastName.toLowerCase() === req.params.lastname.toLowerCase();
 	}));
 	// Return error
@@ -32,6 +32,6 @@ function sentimentAnalyzer(words) {
 	return dir(words);
 }
 
-app.listen(port, function() {
-	console.log("SERVER IS RUNNING ON PORT " + port);
+app.listen(port, () => {
+	console.log(`SERVER IS RUNNING ON PORT ${port}`);
 });

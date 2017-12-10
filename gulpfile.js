@@ -1,5 +1,5 @@
-var gulp 		= require("gulp"),
-	concat_json	= require("gulp-concat-json");
+const gulp			= require("gulp");
+const concat_json	= require("gulp-concat-json");
 
 
 // ===========================================
@@ -7,7 +7,7 @@ var gulp 		= require("gulp"),
 // ===========================================
 
 // Pushes objects from quotes files into array in new file
-gulp.task("merge", function() {
+gulp.task("merge", () => {
 	return gulp.src("collection/**/*.json")
 		.pipe(concat_json("lastWords.json"))
 		.pipe(gulp.dest("./"));
