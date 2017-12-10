@@ -20,13 +20,17 @@ app.get("/", function(req, res) {
 
 // GET QUOTE BY PERSON'S LAST NAME
 app.get("/lastname/:lastname", function(req, res) {
-	// res.send("YOU ARE LOOKING FOR " + req.params.lastname.toUpperCase() + "'S LAST WORDS!");
 	res.send(lastWords.filter(function(person) {
 		return person.lastName.toLowerCase() === req.params.lastname.toLowerCase();
 	}));
 	// Return error
 	// Redirect if no match is found
 });
+
+// ANALYZES SENTIMENT OF LAST WORDS
+function sentimentAnalyzer(words) {
+	return dir(words);
+}
 
 app.listen(port, function() {
 	console.log("SERVER IS RUNNING ON PORT " + port);
