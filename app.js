@@ -4,6 +4,7 @@ const bodyParser 	= require("body-parser");
 const logger		= require("morgan");
 
 const sentiment 	= require("sentiment");
+const accents		= require("remove-accents");
 
 // Loads collection of last words
 const lastWords 	= require("./lastWords");
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
 // GET QUOTE BY PERSON'S LAST NAME
 app.get("/lastname/:lastname", (req, res) => {
 	res.send(lastWords.filter((person) => {
-		return person.lastName.toLowerCase() === req.params.lastname.toLowerCase();
+		return accents.remove(person.lastName).toLowerCase() === accents.remove(req.params.lastname).toLowerCase();
 	}));
 	// Return error
 	// Redirect if no match is found
