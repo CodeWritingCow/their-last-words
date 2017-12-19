@@ -21,9 +21,15 @@ app.get("/", (req, res) => {
 
 // GET QUOTE BY PERSON'S LAST NAME
 app.get("/lastname/:lastname", (req, res) => {
-	res.send(lastWords.filter((person) => {
+	var searchResults = lastWords.filter((person) => {
 		return accents.remove(person.lastName).toLowerCase() === accents.remove(req.params.lastname).toLowerCase();
-	}));
+	});
+
+	if (searchResults.length > 0) {
+		res.send(searchResults);
+	} else {
+		res.send('No matching results were found.');
+	}
 	// Return error
 	// Redirect if no match is found
 });
