@@ -25,6 +25,14 @@ app.get("/lastname/:lastname", (req, res) => {
 		return accents.remove(person.lastName).toLowerCase() === accents.remove(req.params.lastname).toLowerCase();
 	});
 
+	searchResults.forEach((person) => {
+		if (person.translation) {
+			person.sentiment = sentimentAnalyzer(person.translation);
+		} else {
+			person.sentiment = sentimentAnalyzer(person.lastWords);
+		}
+	});
+
 	if (searchResults.length > 0) {
 		res.send(searchResults);
 	} else {
@@ -36,7 +44,7 @@ app.get("/lastname/:lastname", (req, res) => {
 
 // ANALYZES SENTIMENT OF LAST WORDS
 function sentimentAnalyzer(words) {
-	return dir(words);
+	return sentiment(words);
 }
 
 app.listen(port, () => {
