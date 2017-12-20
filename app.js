@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 // GET QUOTE BY PERSON'S LAST NAME
 app.get("/lastname/:lastname", (req, res) => {
 	var searchResults = lastWords.filter((person) => {
-		return accents.remove(person.lastName).toLowerCase() === accents.remove(req.params.lastname).toLowerCase();
+		return accents.remove(person.lastName).toLowerCase().includes(accents.remove(req.params.lastname).toLowerCase());
 	});
 
 	searchResults.forEach((person) => {
