@@ -16,7 +16,15 @@ app.use(bodyParser.json());
 
 // HOME ROUTE
 app.get("/", (req, res) => {
-	res.send(lastWords);
+	var searchResults = lastWords;
+	searchResults.forEach((person) => {
+		if (person.translation) {
+			person.sentiment = sentimentAnalyzer(person.translation);
+		} else {
+			person.sentiment = sentimentAnalyzer(person.lastWords);
+		}
+	});
+	res.send(searchResults);
 });
 
 // GET QUOTE BY PERSON'S LAST NAME
