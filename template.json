@@ -1,0 +1,11 @@
+// Remove all comments from JSON file before committing
+{
+	"lastName": "",
+	"firstName": "", // If person has a middle name, include it here
+	"lastWords": "",
+	"translation": "", // If last words are in a non-English language, include English translation
+	"biography": "", // One-sentence biography
+	"born": "", // YYYY-MM-DD or YYYY. If date is unknown, omit this.
+	"died": "", // YYYY-MM-DD or YYYT. See note above.
+	"note": "" // Circumstance of person's last words, if known
+}
