@@ -51,9 +51,7 @@ app.get("/lastname/:lastname", (req, res) => {
 });
 
 // ANALYZES SENTIMENT OF LAST WORDS
-function sentimentAnalyzer(words) {
-	return sentiment(words);
-}
+const sentimentAnalyzer = words => sentiment(words);
 
 app.listen(port, () => {
 	console.log(`SERVER IS RUNNING ON PORT ${port}`);
