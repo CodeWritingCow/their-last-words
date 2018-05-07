@@ -3,6 +3,7 @@
 	"firstName": "Alan", 
 	"lastWords": "Always!",
 	"biography": "Actor known for playing the role of Professor Severus Snape in the Harry Potter franchise", 
-	"born": "1946", 
-	"died": "2016"
+	"born": "1946-02-21", 
+	"died": "2016-01-14",
+	"note": "Died of pancreatic cancer"
 }

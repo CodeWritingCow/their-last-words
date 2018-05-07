@@ -2,7 +2,8 @@
 	"lastName": "Feynman",
 	"firstName": "Richard Phillips", 
 	"lastWords": "I'd hate to die twice. It's so boring.",
-	"biography": "Theoretical physicist, Nobel prize winner for his contributions to the development of quantum electrodynamics",
+	"biography": "Theoretical physicist and Nobel Prize winner",
 	"born": "1918-05-11",
-	"died": "1988-02-15"
+	"died": "1988-02-15",
+	"note": "Died of abdominal cancer"
 }
